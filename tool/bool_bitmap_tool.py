@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
-img=cv2.imread('1.jpg')
+img=cv2.imread('img.dfkai-sb.exp0.tif')
 GrayImage=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 ret1,thresh1=cv2.threshold(GrayImage,127,255,cv2.THRESH_BINARY)
 ret2,thresh2=cv2.threshold(GrayImage,127,255,cv2.THRESH_BINARY_INV)
@@ -14,5 +14,5 @@ for i in range(6):
    plt.subplot(2,3,i+1),plt.imshow(images[i],'gray')
    plt.title(titles[i])
    plt.xticks([]),plt.yticks([])
-cv2.imwrite('output.tiff', thresh4)
+cv2.imwrite('output.tiff', thresh2)
 plt.show()
