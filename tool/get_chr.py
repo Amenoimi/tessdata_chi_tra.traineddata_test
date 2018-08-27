@@ -9,7 +9,7 @@ min_chr=19968
 
 go_chr= input('請輸入你的訓練集：')
 go_chr=list(go_chr)
-n=20
+n=6
 out=[]
 
 
@@ -18,16 +18,16 @@ def write_file(path, data):
 		f.writelines(data)
 
 
-for a in go_chr:
+#for a in go_chr:
 
-    if ord(a)-int(n/2) <= min_chr:
-        for x in range(n):
-            out+=chr(ord(a)+x)
-    else:
-        for x in range(n):
-             out+=chr(ord(a)+x-int(n/2))
-
-tmp=["!","?",","]
+#     if ord(a)-int(n/2) <= min_chr:
+#         for x in range(n):
+#             out+=chr(ord(a)+x)
+#     else:
+#         for x in range(n):
+#              out+=chr(ord(a)+x-int(n/2))
+out=go_chr
+tmp=[]
 [tmp.append(i) for i in out if not i in tmp]
 out=tmp
 tmp=[]
@@ -38,4 +38,4 @@ tmp=sorted(tmp)
 for a in range(len(tmp)):
         out[a]=chr(tmp[a])
 
-write_file("ch.font.exp0.txt", out)
+write_file("out.txt", out)
